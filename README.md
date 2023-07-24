@@ -44,6 +44,8 @@
 - [UserRepository.java](https://github.com/kdtkdt/NOWNESS/blob/sg/src/main/java/highfive/nowness/repository/UserRepository.java)
 - [UserDTO.java](https://github.com/kdtkdt/NOWNESS/blob/sg/src/main/java/highfive/nowness/dto/UserDTO.java)
 - [user-mapper.xml](https://github.com/kdtkdt/NOWNESS/blob/sg/src/main/resources/mapper/user-mapper.xml)
+- [CaptchaApiController.java]
+- [NaverImageCaptchaService.java]
 - [ApiConfig.java] Naver Image Cpatcha API key 로딩
 
 ### 회원정보 화면
