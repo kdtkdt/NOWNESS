@@ -26,6 +26,7 @@
 - 프로젝트 진행 중 작성한 글
   - [MySQL Error Code 1824. Failed to open the referenced table 'tablename'](https://limvik.github.io/posts/mysql-error-code-1824/)
   - [Spring Boot, MyBatis, MySQL Stored Procedure 사용 예제](https://limvik.github.io/posts/stored-procedure-example-in-spring-boot-mybatis-mysql/)
+  - [Spring Security 로그아웃(Logout) 하기](https://limvik.github.io/posts/spring-security-logout-operation/)
   - [Spring Security 공부 글](https://limvik.github.io/categories/spring/)
 
 # 구현 사항
