@@ -4,7 +4,7 @@
 - 기간 및 인원: 진행중 / 5명(풀스택)
 
 - 기술 스택
-  - Backend: Java 17, Spring Boot 3, Thymeleaf, Spring Security 6, MyBatis 3, MySQL 8
+  - Backend: Java 17, Spring Boot 3.1.1, Thymeleaf 3.1.1, Spring Security 6.1.1, MyBatis 3.0.2, MySQL 8.0.32
   - Frontend: Bootstrap, JavaScript, jQuery
   - 외부 API: Naver Image CAPTCHA API
 
@@ -59,6 +59,18 @@
 ### 회원정보
 
 ![회원정보](https://github.com/kdtkdt/NOWNESS/assets/135004614/c456de35-07c9-4848-b5d1-97dfa7c4582f)
+
+### 관련 파일
+
+- [mypage.html](https://github.com/kdtkdt/NOWNESS/blob/sg/src/main/resources/templates/mypage.html)
+- [mypage.js](https://github.com/kdtkdt/NOWNESS/blob/sg/src/main/resources/static/js/user/mypage.js)
+- [UserController.java](https://github.com/kdtkdt/NOWNESS/blob/sg/src/main/java/highfive/nowness/controller/UserController.java#L104-L121)
+- [UserApiController.java](https://github.com/kdtkdt/NOWNESS/blob/sg/src/main/java/highfive/nowness/controller/UserApiController.java)
+- [UserDetailsService.java](https://github.com/kdtkdt/NOWNESS/blob/sg/src/main/java/highfive/nowness/service/UserDetailsService.java)
+- [UserRepository.java](https://github.com/kdtkdt/NOWNESS/blob/sg/src/main/java/highfive/nowness/repository/UserRepository.java)
+- [BoardRepository.java](https://github.com/kdtkdt/NOWNESS/blob/sg/src/main/java/highfive/nowness/repository/BoardRepository.java)
+- [user-mapper.xml](https://github.com/kdtkdt/NOWNESS/blob/sg/src/main/resources/mapper/user-mapper.xml)
+- [board-mapper.xml](https://github.com/kdtkdt/NOWNESS/blob/sg/src/main/resources/mapper/board-mapper.xml)
 
 ### 사용자 작성 게시글/댓글 목록
 
