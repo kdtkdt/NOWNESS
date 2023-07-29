@@ -78,6 +78,22 @@
 
 ![사용자 작성 게시글 목록](https://github.com/kdtkdt/NOWNESS/assets/135004614/44b8c1ee-8e21-487c-af27-882ae0f73484)
 
+### 관련 파일
+
+- [user_posts_replies.html](https://github.com/kdtkdt/NOWNESS/blob/sg/src/main/resources/templates/user_posts_replies.html)
+- [UserController.java](https://github.com/kdtkdt/NOWNESS/blob/sg/src/main/java/highfive/nowness/controller/UserController.java#L123-L157)
+- [UserDetailsService.java](https://github.com/kdtkdt/NOWNESS/blob/sg/src/main/java/highfive/nowness/service/UserDetailsService.java#L206-L224)
+- [BoardRepository.java](https://github.com/kdtkdt/NOWNESS/blob/sg/src/main/java/highfive/nowness/repository/BoardRepository.java)
+- [board-mapper.xml](https://github.com/kdtkdt/NOWNESS/blob/sg/src/main/resources/mapper/board-mapper.xml#L15-L39)
+
+### 회원탈퇴
+
+![회원탈퇴 화면](https://github.com/kdtkdt/NOWNESS/assets/135004614/e1813ae5-db4f-4041-a33d-fac08689d73f)
+
+
 ## 데이터 모델 설계 및 ERD 작성
 
-![nowness ERD](https://github.com/kdtkdt/NOWNESS/assets/135004614/e95fcdcd-5e3a-4ef7-bc4f-2903403ec189)
+![nowness ERD](https://github.com/kdtkdt/NOWNESS/assets/135004614/b04546f4-0754-4f67-8f56-e9034860cae5)
+
+- 사용자 탈퇴 시 게시글 자동 삭제되지 않음
+- 관리자가 게시글 삭제 시 댓글, 첨부파일, 좋아요, 태그 등 모두 함께 삭제
