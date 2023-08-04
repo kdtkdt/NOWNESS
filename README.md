@@ -72,11 +72,11 @@
 
 ## 이메일 인증
 
+![헤더에서 이메일 인증 필요 메시지](https://github.com/kdtkdt/NOWNESS/assets/135004614/62fb12e3-b890-4d33-b2b3-6178959a50dc)
+
 ![회원가입 시 발송되는 메일](https://github.com/kdtkdt/NOWNESS/assets/135004614/59e47b54-94b2-4213-9634-072a1acc0e46)
 
-![image](https://github.com/kdtkdt/NOWNESS/assets/135004614/14e13477-d108-451a-843e-e8f83ce157ed)
-
-![이메일 인증](https://github.com/kdtkdt/NOWNESS/assets/135004614/62fb12e3-b890-4d33-b2b3-6178959a50dc)
+![이메일 인증 완료 시 화면](https://github.com/kdtkdt/NOWNESS/assets/135004614/14e13477-d108-451a-843e-e8f83ce157ed)
 
 ### 관련 파일
 
