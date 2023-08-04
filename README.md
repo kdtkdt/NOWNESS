@@ -29,11 +29,9 @@
   - [Spring Security 로그아웃(Logout) 하기](https://limvik.github.io/posts/spring-security-logout-operation/)
   - [Spring Security 공부 글](https://limvik.github.io/categories/spring/)
 
-# 구현 사항
+# 구현 사항: 로그인/회원가입/회원정보 등 회원관련 화면 설계 및 구현
 
-## 로그인/회원가입/회원정보 등 회원관련 화면 설계 및 구현
-
-### 로그인/회원가입
+## 로그인/회원가입
 
 - ID/Password 및 소셜 로그인(Google, Kakao, Naver) 기능
 
@@ -56,7 +54,7 @@
 - [NaverImageCaptchaService.java](https://github.com/kdtkdt/NOWNESS/blob/sg/src/main/java/highfive/nowness/captcha/NaverImageCaptchaService.java)
 - [ApiConfig.java](https://github.com/kdtkdt/NOWNESS/blob/sg/src/main/java/highfive/nowness/config/ApiConfig.java) Naver Image Cpatcha API key 로딩
 
-### 회원정보
+## 회원정보
 
 ![회원정보](https://github.com/kdtkdt/NOWNESS/assets/135004614/c456de35-07c9-4848-b5d1-97dfa7c4582f)
 
@@ -72,7 +70,42 @@
 - [user-mapper.xml](https://github.com/kdtkdt/NOWNESS/blob/sg/src/main/resources/mapper/user-mapper.xml)
 - [board-mapper.xml](https://github.com/kdtkdt/NOWNESS/blob/sg/src/main/resources/mapper/board-mapper.xml)
 
-### 사용자 작성 게시글/댓글 목록
+## 이메일 인증
+
+![회원가입 시 발송되는 메일](https://github.com/kdtkdt/NOWNESS/assets/135004614/59e47b54-94b2-4213-9634-072a1acc0e46)
+
+![image](https://github.com/kdtkdt/NOWNESS/assets/135004614/14e13477-d108-451a-843e-e8f83ce157ed)
+
+![이메일 인증](https://github.com/kdtkdt/NOWNESS/assets/135004614/62fb12e3-b890-4d33-b2b3-6178959a50dc)
+
+### 관련 파일
+
+### 이메일 인증 및 비밀번호 재설정 기능을 개선할 방법
+
+현재는 회원가입 시 혹은 인증 이메일 재발송 요청 시 UUID로 생성한 인증 코드를 데이터베이스에 저장하고, 인증 링크 클릭 시에 삭제하고 있습니다.
+
+비밀번호 재설정 시에도 이메일 인증과 비슷하게 비밀번호 재설정 이메일을 보내면서 UUID로 생성한 인증 코드를 보내고, 데이터베이스에 저장합니다. 재설정이 완료되면 데이터베이스에서도 삭제됩니다.
+
+그리고 보안을 위해 데이터베이스의 EVENT 기능을 이용하여 3일마다 삭제하고 있습니다.
+
+```sql
+CREATE EVENT delete_expired_password_reset_data
+ON SCHEDULE EVERY 1 DAY
+STARTS CURRENT_TIMESTAMP
+DO
+  DELETE FROM password_reset_lists
+  WHERE date < DATE_SUB(NOW(), INTERVAL 3 DAY);
+```
+
+JWT(JSON Web Token)를 공부하기 시작하면서, JWT를 email 인증에 사용하는 사례를 보니 굳이 테이블을 새로 만들거나 EVENT로 데이터베이스에 부하를 발생시키지 않을 수 있겠다는 생각이듭니다.
+
+```
+https://example.com/confirm-email?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG5kb2VAZXhhbXBsZS5jb20iLCJpYXQiOjE2MDUxNzU4OTIsImV4cCI6MTYwNTE4MzA5Mn0.A9G_WUqabZn_3hNQPZTgS1K1S9HaoQIGtSowuhcXfL4
+```
+
+JWT를 막 공부하기 시작했기 때문에, 상황에 따라 단점이 있는지 파악이 필요하겠습니다.
+
+## 사용자 작성 게시글/댓글 목록
 
 사용자 작성 게시글과 댓글 목록 화면은 UI를 공유하므로 게시글 목록 스크린샷만 추가합니다.
 
@@ -86,7 +119,7 @@
 - [BoardRepository.java](https://github.com/kdtkdt/NOWNESS/blob/sg/src/main/java/highfive/nowness/repository/BoardRepository.java)
 - [board-mapper.xml](https://github.com/kdtkdt/NOWNESS/blob/sg/src/main/resources/mapper/board-mapper.xml#L15-L39)
 
-### 회원탈퇴
+## 회원탈퇴
 
 ![회원탈퇴 화면](https://github.com/kdtkdt/NOWNESS/assets/135004614/e1813ae5-db4f-4041-a33d-fac08689d73f)
 
