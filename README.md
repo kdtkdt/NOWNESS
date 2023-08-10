@@ -1,7 +1,7 @@
 # NOWNESS
 - 국비지원 풀스택 과정 팀 프로젝트
 - 기획 의도: 지역 현장 정보 공유를 통한 사회적 비용(인파 집중으로 인한 문제 등) 감소
-- 기간 및 인원: 진행중 / 5명(풀스택)
+- 기간 및 인원: 약 1개월 / 5명(풀스택)
 
 - 기술 스택
   - Backend: Java 17, Spring Boot 3.1.1, Thymeleaf 3.1.1, Spring Security 6.1.1, MyBatis 3.0.2, MySQL 8.0.32
@@ -93,6 +93,7 @@ DO
 JWT(JSON Web Token)를 공부하기 시작하면서, JWT를 email 인증에 사용하는 사례를 보니 굳이 테이블을 새로 만들거나 EVENT로 데이터베이스에 부하를 발생시키지 않을 수 있겠다는 생각이듭니다.
 
 ```
+관련 예제
 https://example.com/confirm-email?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG5kb2VAZXhhbXBsZS5jb20iLCJpYXQiOjE2MDUxNzU4OTIsImV4cCI6MTYwNTE4MzA5Mn0.A9G_WUqabZn_3hNQPZTgS1K1S9HaoQIGtSowuhcXfL4
 ```
 
@@ -116,10 +117,19 @@ JWT를 막 공부하기 시작했기 때문에, 상황에 따라 단점이 있�
 
 ![회원탈퇴 화면](https://github.com/kdtkdt/NOWNESS/assets/135004614/e1813ae5-db4f-4041-a33d-fac08689d73f)
 
+### 관련 파일
+
+- [withdrawal.html](https://github.com/kdtkdt/NOWNESS/blob/sg/src/main/resources/templates/withdrawal.html)
+- [withdrawal.js](https://github.com/kdtkdt/NOWNESS/blob/sg/src/main/resources/static/js/user/withdrawal.js)
+- [UserController.java](https://github.com/kdtkdt/NOWNESS/blob/sg/src/main/java/highfive/nowness/controller/UserController.java#L143)
+- [UserDetailsService.java](https://github.com/kdtkdt/NOWNESS/blob/sg/src/main/java/highfive/nowness/service/UserDetailsService.java#L227)
+- [UserRepository.java](https://github.com/kdtkdt/NOWNESS/blob/sg/src/main/java/highfive/nowness/repository/UserRepository.java#L25)
+- [user-mapper.xml](https://github.com/kdtkdt/NOWNESS/blob/sg/src/main/resources/mapper/user-mapper.xml#L69)
+
 
 ## 데이터 모델 설계 및 ERD 작성
 
-![nowness ERD](https://github.com/kdtkdt/NOWNESS/assets/135004614/b04546f4-0754-4f67-8f56-e9034860cae5)
+![nowness ERD](https://github.com/kdtkdt/NOWNESS/assets/135004614/f20c4529-52b3-45ad-a914-010168d0e294)
 
 ### 협의 사항
 
@@ -133,3 +143,7 @@ JWT를 막 공부하기 시작했기 때문에, 상황에 따라 단점이 있�
 - 테스트 코드 작성: 다음 프로젝트에서 테스트 코드 먼저 작성하는 방식을 적용하고 있습니다.
 - AOP를 이용한 로그인 여부 확인, 이메일 인증 여부 확인: 굳이 AOP로 해야 할 필요성을 못느껴 만들었다가 삭제했습니다.
 - 로그인/회원가입 시 키 입력 감지 및 유효성, 중복 검사 개선(키워드: 디바운싱, 쓰로틀링): 개인 프로젝트에서 적용할 계획입니다.
+
+## 기술적으로 어려웠던 점
+- jenkins 에서 jar 파일 실행 시 환경변수를 불러오지 못하는 문제를 해결하지 못해, command line 에서 직접 jar 파일을 실행시켰습니다.
+- javascript 중복 코드가 발생해도 thymeleaf 와 함께 쓸 때의 best pratice는 찾기가 어려웠습니다.
