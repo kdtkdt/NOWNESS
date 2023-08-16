@@ -20,7 +20,10 @@
   - [MySQL Error Code 1824. Failed to open the referenced table 'tablename'](https://limvik.github.io/posts/mysql-error-code-1824/)
   - [Spring Boot, MyBatis, MySQL Stored Procedure 사용 예제](https://limvik.github.io/posts/stored-procedure-example-in-spring-boot-mybatis-mysql/)
   - [Spring Security 로그아웃(Logout) 하기](https://limvik.github.io/posts/spring-security-logout-operation/)
+  - [Logout REST API의 엔드포인트와 HTTP 메서드는 어떻게 지정해야 할까?](https://limvik.github.io/posts/how-to-set-endpoint-name-and-http-method-for-logout-rest-api/)
   - [Spring Security 공부 글](https://limvik.github.io/categories/spring/)
+  - [NCloud Image CAPTCHA API 사용 시 클라이언트에 이미지 바로 보내는 방법](https://limvik.github.io/posts/how-to-send-image-to-client-directly-for-using-ncloud-image-captcha/)
+  - [배포 연습하면서 발생한 문제들](https://limvik.github.io/posts/problems-in-deploy-exercise/)
 
 # 구현 사항: 로그인/회원가입/회원정보 등 회원관련 화면 설계 및 구현
 
